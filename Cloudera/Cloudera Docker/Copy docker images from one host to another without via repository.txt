@@ -1,0 +1,11 @@
+http://stackoverflow.com/questions/23935141/how-to-copy-docker-images-from-one-host-to-another-without-via-repository
+
+How to copy docker images from one host to another without via repository?	
+
+You will need to save the docker image as a tar file:
+
+docker save -o <save image to path> <image name>
+
+Then copy your image to a new system with regular file transfer tools such as cp or scp. After that you will have to load the image into docker:
+
+docker load -i <path to image tar file>

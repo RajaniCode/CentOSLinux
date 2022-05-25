@@ -1,0 +1,669 @@
+[rajani@localhost ClamAV]$ su root
+Password: 
+[root@localhost ClamAV]# yum install epel-release
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.vhost.vn
+ * epel: ftp.cuhk.edu.hk
+ * extras: mirrors.viethosting.vn
+ * nux-dextop: mirror.li.nux.ro
+ * rpmforge: mirror.smartmedia.net.id
+ * updates: mirror.nbrc.ac.in
+Package epel-release-7-6.noarch already installed and latest version
+Nothing to do
+[root@localhost ClamAV]# yum install clamav-server clamav-data clamav-update clamav-filesystem clamav clamav-scanner-systemd clamav-devel clamav-lib clamav-server-systemd
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.vhost.vn
+ * epel: ftp.cuhk.edu.hk
+ * extras: mirrors.viethosting.vn
+ * nux-dextop: li.nux.ro
+ * rpmforge: mirror.smartmedia.net.id
+ * updates: mirror.nbrc.ac.in
+Resolving Dependencies
+--> Running transaction check
+---> Package clamav.x86_64 0:0.99.1-1.el7 will be installed
+---> Package clamav-data.noarch 0:0.99.1-1.el7 will be installed
+---> Package clamav-devel.x86_64 0:0.99.1-1.el7 will be installed
+--> Processing Dependency: openssl-devel for package: clamav-devel-0.99.1-1.el7.x86_64
+---> Package clamav-filesystem.noarch 0:0.99.1-1.el7 will be installed
+---> Package clamav-lib.x86_64 0:0.99.1-1.el7 will be installed
+---> Package clamav-scanner-systemd.noarch 0:0.99.1-1.el7 will be installed
+--> Processing Dependency: clamav-scanner = 0.99.1-1.el7 for package: clamav-scanner-systemd-0.99.1-1.el7.noarch
+---> Package clamav-server.x86_64 0:0.99.1-1.el7 will be installed
+---> Package clamav-server-systemd.noarch 0:0.99.1-1.el7 will be installed
+---> Package clamav-update.x86_64 0:0.99.1-1.el7 will be installed
+--> Running transaction check
+---> Package clamav-scanner.noarch 0:0.99.1-1.el7 will be installed
+---> Package openssl-devel.x86_64 1:1.0.1e-51.el7_2.4 will be installed
+--> Processing Dependency: openssl-libs(x86-64) = 1:1.0.1e-51.el7_2.4 for package: 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64
+--> Processing Dependency: zlib-devel(x86-64) for package: 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64
+--> Processing Dependency: krb5-devel(x86-64) for package: 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64
+--> Running transaction check
+---> Package krb5-devel.x86_64 0:1.13.2-12.el7_2 will be installed
+--> Processing Dependency: krb5-libs(x86-64) = 1.13.2-12.el7_2 for package: krb5-devel-1.13.2-12.el7_2.x86_64
+--> Processing Dependency: libverto-devel for package: krb5-devel-1.13.2-12.el7_2.x86_64
+--> Processing Dependency: libselinux-devel for package: krb5-devel-1.13.2-12.el7_2.x86_64
+--> Processing Dependency: libcom_err-devel for package: krb5-devel-1.13.2-12.el7_2.x86_64
+--> Processing Dependency: keyutils-libs-devel for package: krb5-devel-1.13.2-12.el7_2.x86_64
+--> Processing Dependency: libkdb5.so.8()(64bit) for package: krb5-devel-1.13.2-12.el7_2.x86_64
+--> Processing Dependency: libkadm5srv_mit.so.9()(64bit) for package: krb5-devel-1.13.2-12.el7_2.x86_64
+---> Package openssl-libs.x86_64 1:1.0.1e-34.el7 will be updated
+--> Processing Dependency: openssl-libs(x86-64) = 1:1.0.1e-34.el7 for package: 1:openssl-1.0.1e-34.el7.x86_64
+---> Package openssl-libs.x86_64 1:1.0.1e-51.el7_2.4 will be an update
+---> Package zlib-devel.x86_64 0:1.2.7-15.el7 will be installed
+--> Running transaction check
+---> Package keyutils-libs-devel.x86_64 0:1.5.8-3.el7 will be installed
+---> Package krb5-libs.x86_64 0:1.11.3-49.el7 will be updated
+--> Processing Dependency: krb5-libs(x86-64) = 1.11.3-49.el7 for package: krb5-workstation-1.11.3-49.el7.x86_64
+--> Processing Dependency: libkadm5srv_mit.so.8()(64bit) for package: krb5-workstation-1.11.3-49.el7.x86_64
+--> Processing Dependency: libkadm5srv_mit.so.8(kadm5srv_mit_8_MIT)(64bit) for package: krb5-workstation-1.11.3-49.el7.x86_64
+--> Processing Dependency: libkdb5.so.7()(64bit) for package: krb5-workstation-1.11.3-49.el7.x86_64
+--> Processing Dependency: libkdb5.so.7(kdb5_7_MIT)(64bit) for package: krb5-workstation-1.11.3-49.el7.x86_64
+---> Package krb5-libs.x86_64 0:1.13.2-12.el7_2 will be an update
+---> Package libcom_err-devel.x86_64 0:1.42.9-7.el7 will be installed
+--> Processing Dependency: libcom_err(x86-64) = 1.42.9-7.el7 for package: libcom_err-devel-1.42.9-7.el7.x86_64
+---> Package libselinux-devel.x86_64 0:2.2.2-6.el7 will be installed
+--> Processing Dependency: libsepol-devel >= 2.1.9-1 for package: libselinux-devel-2.2.2-6.el7.x86_64
+--> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.2.2-6.el7.x86_64
+--> Processing Dependency: pkgconfig(libpcre) for package: libselinux-devel-2.2.2-6.el7.x86_64
+---> Package libverto-devel.x86_64 0:0.2.5-4.el7 will be installed
+---> Package openssl.x86_64 1:1.0.1e-34.el7 will be updated
+---> Package openssl.x86_64 1:1.0.1e-51.el7_2.4 will be an update
+--> Running transaction check
+---> Package krb5-workstation.x86_64 0:1.11.3-49.el7 will be updated
+---> Package krb5-workstation.x86_64 0:1.13.2-12.el7_2 will be an update
+---> Package libcom_err.x86_64 0:1.42.9-4.el7 will be updated
+--> Processing Dependency: libcom_err(x86-64) = 1.42.9-4.el7 for package: e2fsprogs-1.42.9-4.el7.x86_64
+--> Processing Dependency: libcom_err(x86-64) = 1.42.9-4.el7 for package: e2fsprogs-libs-1.42.9-4.el7.x86_64
+--> Processing Dependency: libcom_err(x86-64) = 1.42.9-4.el7 for package: libss-1.42.9-4.el7.x86_64
+---> Package libcom_err.x86_64 0:1.42.9-7.el7 will be an update
+---> Package libsepol-devel.x86_64 0:2.1.9-3.el7 will be installed
+---> Package pcre-devel.x86_64 0:8.32-15.el7 will be installed
+--> Processing Dependency: pcre(x86-64) = 8.32-15.el7 for package: pcre-devel-8.32-15.el7.x86_64
+--> Running transaction check
+---> Package e2fsprogs.x86_64 0:1.42.9-4.el7 will be updated
+---> Package e2fsprogs.x86_64 0:1.42.9-7.el7 will be an update
+---> Package e2fsprogs-libs.x86_64 0:1.42.9-4.el7 will be updated
+---> Package e2fsprogs-libs.x86_64 0:1.42.9-7.el7 will be an update
+---> Package libss.x86_64 0:1.42.9-4.el7 will be updated
+---> Package libss.x86_64 0:1.42.9-7.el7 will be an update
+---> Package pcre.x86_64 0:8.32-12.el7 will be updated
+---> Package pcre.x86_64 0:8.32-15.el7 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=============================================================================================================================================================================
+ Package                                           Arch                              Version                                        Repository                          Size
+=============================================================================================================================================================================
+Installing:
+ clamav                                            x86_64                            0.99.1-1.el7                                   epel                               844 k
+ clamav-data                                       noarch                            0.99.1-1.el7                                   epel                                64 M
+ clamav-devel                                      x86_64                            0.99.1-1.el7                                   epel                                38 k
+ clamav-filesystem                                 noarch                            0.99.1-1.el7                                   epel                                20 k
+ clamav-lib                                        x86_64                            0.99.1-1.el7                                   epel                               3.8 M
+ clamav-scanner-systemd                            noarch                            0.99.1-1.el7                                   epel                                20 k
+ clamav-server                                     x86_64                            0.99.1-1.el7                                   epel                               106 k
+ clamav-server-systemd                             noarch                            0.99.1-1.el7                                   epel                                20 k
+ clamav-update                                     x86_64                            0.99.1-1.el7                                   epel                                94 k
+Installing for dependencies:
+ clamav-scanner                                    noarch                            0.99.1-1.el7                                   epel                                27 k
+ keyutils-libs-devel                               x86_64                            1.5.8-3.el7                                    base                                37 k
+ krb5-devel                                        x86_64                            1.13.2-12.el7_2                                updates                            649 k
+ libcom_err-devel                                  x86_64                            1.42.9-7.el7                                   base                                30 k
+ libselinux-devel                                  x86_64                            2.2.2-6.el7                                    base                               174 k
+ libsepol-devel                                    x86_64                            2.1.9-3.el7                                    base                                71 k
+ libverto-devel                                    x86_64                            0.2.5-4.el7                                    base                                12 k
+ openssl-devel                                     x86_64                            1:1.0.1e-51.el7_2.4                            updates                            1.2 M
+ pcre-devel                                        x86_64                            8.32-15.el7                                    base                               478 k
+ zlib-devel                                        x86_64                            1.2.7-15.el7                                   base                                50 k
+Updating for dependencies:
+ e2fsprogs                                         x86_64                            1.42.9-7.el7                                   base                               697 k
+ e2fsprogs-libs                                    x86_64                            1.42.9-7.el7                                   base                               165 k
+ krb5-libs                                         x86_64                            1.13.2-12.el7_2                                updates                            843 k
+ krb5-workstation                                  x86_64                            1.13.2-12.el7_2                                updates                            765 k
+ libcom_err                                        x86_64                            1.42.9-7.el7                                   base                                40 k
+ libss                                             x86_64                            1.42.9-7.el7                                   base                                45 k
+ openssl                                           x86_64                            1:1.0.1e-51.el7_2.4                            updates                            711 k
+ openssl-libs                                      x86_64                            1:1.0.1e-51.el7_2.4                            updates                            951 k
+ pcre                                              x86_64                            8.32-15.el7                                    base                               418 k
+
+Transaction Summary
+=============================================================================================================================================================================
+Install  9 Packages (+10 Dependent packages)
+Upgrade             (  9 Dependent packages)
+
+Total size: 76 M
+Total download size: 74 M
+Is this ok [y/d/N]: y
+Downloading packages:
+No Presto metadata available for base
+(1/26): clamav-filesystem-0.99.1-1.el7.noarch.rpm                                                                                                     |  20 kB  00:00:08     
+(2/26): clamav-devel-0.99.1-1.el7.x86_64.rpm                                                                                                          |  38 kB  00:00:10     
+(3/26): clamav-scanner-0.99.1-1.el7.noarch.rpm                                                                                                        |  27 kB  00:00:03     
+(4/26): clamav-scanner-systemd-0.99.1-1.el7.noarch.rpm                                                                                                |  20 kB  00:00:02     
+(5/26): clamav-server-systemd-0.99.1-1.el7.noarch.rpm                                                                                                 |  20 kB  00:00:01     
+(6/26): clamav-server-0.99.1-1.el7.x86_64.rpm                                                                                                         | 106 kB  00:00:04     
+(7/26): clamav-update-0.99.1-1.el7.x86_64.rpm                                                                                                         |  94 kB  00:00:01     
+(8/26): e2fsprogs-libs-1.42.9-7.el7.x86_64.rpm                                                                                                        | 165 kB  00:00:02     
+(9/26): keyutils-libs-devel-1.5.8-3.el7.x86_64.rpm                                                                                                    |  37 kB  00:00:02     
+(10/26): krb5-libs-1.13.2-12.el7_2.x86_64.rpm                                                                                                         | 843 kB  00:00:21     
+(11/26): krb5-devel-1.13.2-12.el7_2.x86_64.rpm                                                                                                        | 649 kB  00:00:22     
+(12/26): clamav-lib-0.99.1-1.el7.x86_64.rpm                                                                                                           | 3.8 MB  00:00:45     
+(13/26): clamav-0.99.1-1.el7.x86_64.rpm                                                                                                               | 844 kB  00:00:46     
+(14/26): krb5-workstation-1.13.2-12.el7_2.x86_64.rpm                                                                                                  | 765 kB  00:00:05     
+(15/26): libcom_err-1.42.9-7.el7.x86_64.rpm                                                                                                           |  40 kB  00:00:06     
+(16/26): libsepol-devel-2.1.9-3.el7.x86_64.rpm                                                                                                        |  71 kB  00:00:01     
+(17/26): libverto-devel-0.2.5-4.el7.x86_64.rpm                                                                                                        |  12 kB  00:00:00     
+(18/26): libss-1.42.9-7.el7.x86_64.rpm                                                                                                                |  45 kB  00:00:01     
+(19/26): libselinux-devel-2.2.2-6.el7.x86_64.rpm                                                                                                      | 174 kB  00:00:03     
+(20/26): openssl-1.0.1e-51.el7_2.4.x86_64.rpm                                                                                                         | 711 kB  00:00:06     
+(21/26): pcre-8.32-15.el7.x86_64.rpm                                                                                                                  | 418 kB  00:00:06     
+(22/26): libcom_err-devel-1.42.9-7.el7.x86_64.rpm                                                                                                     |  30 kB  00:00:10     
+(23/26): zlib-devel-1.2.7-15.el7.x86_64.rpm                                                                                                           |  50 kB  00:00:04     
+(24/26): pcre-devel-8.32-15.el7.x86_64.rpm                                                                                                            | 478 kB  00:00:16     
+(25/26): openssl-devel-1.0.1e-51.el7_2.4.x86_64.rpm                                                                                                   | 1.2 MB  00:00:23     
+clamav-data-0.99.1-1.el7.noarc FAILED                                          ====================================================        ]  144 B/s |  65 MB  18:14:44 ETA 
+http://mirror.rise.ph/fedora-epel/7/x86_64/c/clamav-data-0.99.1-1.el7.noarch.rpm: [Errno 12] Timeout on http://mirror.rise.ph/fedora-epel/7/x86_64/c/clamav-data-0.99.1-1.el7.noarch.rpm: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+Trying other mirror.
+clamav-data-0.99.1-1.el7.noarc FAILED                                          
+http://ftp.cuhk.edu.hk/pub/linux/fedora-epel/7/x86_64/c/clamav-data-0.99.1-1.el7.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: ftp.cuhk.edu.hk; Unknown error"ETA 
+Trying other mirror.
+clamav-data-0.99.1-1.el7.noarc FAILED                                          
+http://ftp.kddilabs.jp/Linux/packages/fedora/epel/7/x86_64/c/clamav-data-0.99.1-1.el7.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: ftp.kddilabs.jp; Unknown error"
+Trying other mirror.
+clamav-data-0.99.1-1.el7.noarc FAILED                                          
+http://mirrors.ustc.edu.cn/fedora/epel/7/x86_64/c/clamav-data-0.99.1-1.el7.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirrors.ustc.edu.cn; Unknown error"4 ETA 
+Trying other mirror.
+clamav-data-0.99.1-1.el7.noarc FAILED                                          
+http://mirror.wanxp.id/epel/7/x86_64/c/clamav-data-0.99.1-1.el7.noarch.rpm: [Errno 14] HTTP Error 404 - Not Found==================        ]  144 B/s |  65 MB  18:14:44 ETA 
+Trying other mirror.
+(26/26): clamav-data-0.99.1-1.el7.noarch.rpm                                                                                                          |  64 MB  00:01:17     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                        178 kB/s |  74 MB  00:07:07     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : libcom_err-1.42.9-7.el7.x86_64                                                                                                                           1/37 
+  Updating   : krb5-libs-1.13.2-12.el7_2.x86_64                                                                                                                         2/37 
+  Updating   : 1:openssl-libs-1.0.1e-51.el7_2.4.x86_64                                                                                                                  3/37 
+  Installing : clamav-filesystem-0.99.1-1.el7.noarch                                                                                                                    4/37 
+  Installing : clamav-data-0.99.1-1.el7.noarch                                                                                                                          5/37 
+  Updating   : libss-1.42.9-7.el7.x86_64                                                                                                                                6/37 
+  Updating   : pcre-8.32-15.el7.x86_64                                                                                                                                  7/37 
+  Installing : clamav-lib-0.99.1-1.el7.x86_64                                                                                                                           8/37 
+  Installing : clamav-server-0.99.1-1.el7.x86_64                                                                                                                        9/37 
+  Installing : clamav-server-systemd-0.99.1-1.el7.noarch                                                                                                               10/37 
+  Installing : clamav-scanner-systemd-0.99.1-1.el7.noarch                                                                                                              11/37 
+  Installing : clamav-scanner-0.99.1-1.el7.noarch                                                                                                                      12/37 
+  Installing : pcre-devel-8.32-15.el7.x86_64                                                                                                                           13/37 
+  Updating   : e2fsprogs-libs-1.42.9-7.el7.x86_64                                                                                                                      14/37 
+  Installing : libcom_err-devel-1.42.9-7.el7.x86_64                                                                                                                    15/37 
+  Installing : zlib-devel-1.2.7-15.el7.x86_64                                                                                                                          16/37 
+  Installing : libverto-devel-0.2.5-4.el7.x86_64                                                                                                                       17/37 
+  Installing : libsepol-devel-2.1.9-3.el7.x86_64                                                                                                                       18/37 
+  Installing : libselinux-devel-2.2.2-6.el7.x86_64                                                                                                                     19/37 
+  Installing : keyutils-libs-devel-1.5.8-3.el7.x86_64                                                                                                                  20/37 
+  Installing : krb5-devel-1.13.2-12.el7_2.x86_64                                                                                                                       21/37 
+  Installing : 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64                                                                                                                22/37 
+  Installing : clamav-devel-0.99.1-1.el7.x86_64                                                                                                                        23/37 
+  Updating   : e2fsprogs-1.42.9-7.el7.x86_64                                                                                                                           24/37 
+  Installing : clamav-0.99.1-1.el7.x86_64                                                                                                                              25/37 
+  Installing : clamav-update-0.99.1-1.el7.x86_64                                                                                                                       26/37 
+  Updating   : krb5-workstation-1.13.2-12.el7_2.x86_64                                                                                                                 27/37 
+  Updating   : 1:openssl-1.0.1e-51.el7_2.4.x86_64                                                                                                                      28/37 
+  Cleanup    : e2fsprogs-1.42.9-4.el7.x86_64                                                                                                                           29/37 
+  Cleanup    : krb5-workstation-1.11.3-49.el7.x86_64                                                                                                                   30/37 
+  Cleanup    : 1:openssl-1.0.1e-34.el7.x86_64                                                                                                                          31/37 
+  Cleanup    : 1:openssl-libs-1.0.1e-34.el7.x86_64                                                                                                                     32/37 
+  Cleanup    : krb5-libs-1.11.3-49.el7.x86_64                                                                                                                          33/37 
+  Cleanup    : libss-1.42.9-4.el7.x86_64                                                                                                                               34/37 
+  Cleanup    : e2fsprogs-libs-1.42.9-4.el7.x86_64                                                                                                                      35/37 
+  Cleanup    : libcom_err-1.42.9-4.el7.x86_64                                                                                                                          36/37 
+  Cleanup    : pcre-8.32-12.el7.x86_64                                                                                                                                 37/37 
+  Verifying  : keyutils-libs-devel-1.5.8-3.el7.x86_64                                                                                                                   1/37 
+  Verifying  : libsepol-devel-2.1.9-3.el7.x86_64                                                                                                                        2/37 
+  Verifying  : clamav-lib-0.99.1-1.el7.x86_64                                                                                                                           3/37 
+  Verifying  : 1:openssl-1.0.1e-51.el7_2.4.x86_64                                                                                                                       4/37 
+  Verifying  : krb5-workstation-1.13.2-12.el7_2.x86_64                                                                                                                  5/37 
+  Verifying  : pcre-devel-8.32-15.el7.x86_64                                                                                                                            6/37 
+  Verifying  : clamav-server-0.99.1-1.el7.x86_64                                                                                                                        7/37 
+  Verifying  : clamav-0.99.1-1.el7.x86_64                                                                                                                               8/37 
+  Verifying  : libverto-devel-0.2.5-4.el7.x86_64                                                                                                                        9/37 
+  Verifying  : 1:openssl-devel-1.0.1e-51.el7_2.4.x86_64                                                                                                                10/37 
+  Verifying  : clamav-update-0.99.1-1.el7.x86_64                                                                                                                       11/37 
+  Verifying  : clamav-data-0.99.1-1.el7.noarch                                                                                                                         12/37 
+  Verifying  : pcre-8.32-15.el7.x86_64                                                                                                                                 13/37 
+  Verifying  : e2fsprogs-1.42.9-7.el7.x86_64                                                                                                                           14/37 
+  Verifying  : e2fsprogs-libs-1.42.9-7.el7.x86_64                                                                                                                      15/37 
+  Verifying  : clamav-filesystem-0.99.1-1.el7.noarch                                                                                                                   16/37 
+  Verifying  : libselinux-devel-2.2.2-6.el7.x86_64                                                                                                                     17/37 
+  Verifying  : zlib-devel-1.2.7-15.el7.x86_64                                                                                                                          18/37 
+  Verifying  : clamav-server-systemd-0.99.1-1.el7.noarch                                                                                                               19/37 
+  Verifying  : 1:openssl-libs-1.0.1e-51.el7_2.4.x86_64                                                                                                                 20/37 
+  Verifying  : krb5-devel-1.13.2-12.el7_2.x86_64                                                                                                                       21/37 
+  Verifying  : libss-1.42.9-7.el7.x86_64                                                                                                                               22/37 
+  Verifying  : libcom_err-1.42.9-7.el7.x86_64                                                                                                                          23/37 
+  Verifying  : clamav-devel-0.99.1-1.el7.x86_64                                                                                                                        24/37 
+  Verifying  : krb5-libs-1.13.2-12.el7_2.x86_64                                                                                                                        25/37 
+  Verifying  : clamav-scanner-0.99.1-1.el7.noarch                                                                                                                      26/37 
+  Verifying  : libcom_err-devel-1.42.9-7.el7.x86_64                                                                                                                    27/37 
+  Verifying  : clamav-scanner-systemd-0.99.1-1.el7.noarch                                                                                                              28/37 
+  Verifying  : e2fsprogs-libs-1.42.9-4.el7.x86_64                                                                                                                      29/37 
+  Verifying  : e2fsprogs-1.42.9-4.el7.x86_64                                                                                                                           30/37 
+  Verifying  : krb5-workstation-1.11.3-49.el7.x86_64                                                                                                                   31/37 
+  Verifying  : pcre-8.32-12.el7.x86_64                                                                                                                                 32/37 
+  Verifying  : 1:openssl-1.0.1e-34.el7.x86_64                                                                                                                          33/37 
+  Verifying  : libss-1.42.9-4.el7.x86_64                                                                                                                               34/37 
+  Verifying  : 1:openssl-libs-1.0.1e-34.el7.x86_64                                                                                                                     35/37 
+  Verifying  : libcom_err-1.42.9-4.el7.x86_64                                                                                                                          36/37 
+  Verifying  : krb5-libs-1.11.3-49.el7.x86_64                                                                                                                          37/37 
+
+Installed:
+  clamav.x86_64 0:0.99.1-1.el7          clamav-data.noarch 0:0.99.1-1.el7              clamav-devel.x86_64 0:0.99.1-1.el7    clamav-filesystem.noarch 0:0.99.1-1.el7      
+  clamav-lib.x86_64 0:0.99.1-1.el7      clamav-scanner-systemd.noarch 0:0.99.1-1.el7   clamav-server.x86_64 0:0.99.1-1.el7   clamav-server-systemd.noarch 0:0.99.1-1.el7  
+  clamav-update.x86_64 0:0.99.1-1.el7  
+
+Dependency Installed:
+  clamav-scanner.noarch 0:0.99.1-1.el7      keyutils-libs-devel.x86_64 0:1.5.8-3.el7     krb5-devel.x86_64 0:1.13.2-12.el7_2     libcom_err-devel.x86_64 0:1.42.9-7.el7      
+  libselinux-devel.x86_64 0:2.2.2-6.el7     libsepol-devel.x86_64 0:2.1.9-3.el7          libverto-devel.x86_64 0:0.2.5-4.el7     openssl-devel.x86_64 1:1.0.1e-51.el7_2.4    
+  pcre-devel.x86_64 0:8.32-15.el7           zlib-devel.x86_64 0:1.2.7-15.el7            
+
+Dependency Updated:
+  e2fsprogs.x86_64 0:1.42.9-7.el7        e2fsprogs-libs.x86_64 0:1.42.9-7.el7       krb5-libs.x86_64 0:1.13.2-12.el7_2       krb5-workstation.x86_64 0:1.13.2-12.el7_2      
+  libcom_err.x86_64 0:1.42.9-7.el7       libss.x86_64 0:1.42.9-7.el7                openssl.x86_64 1:1.0.1e-51.el7_2.4       openssl-libs.x86_64 1:1.0.1e-51.el7_2.4        
+  pcre.x86_64 0:8.32-15.el7             
+
+Complete!
+[root@localhost ClamAV]# setsebool -P antivirus_can_scan_system 1
+[root@localhost ClamAV]# getsebool -a | grep virus
+antivirus_can_scan_system --> on
+antivirus_use_jit --> off
+[root@localhost ClamAV]# cp /usr/share/clamav/template/clamd.conf /etc/clamd.d/clamd.conf
+[root@localhost ClamAV]# sed -i '/^Example/d' /etc/clamd.d/clamd.conf
+[root@localhost ClamAV]# cp /etc/freshclam.conf /etc/freshclam.conf.bak
+[root@localhost ClamAV]# sed -i '/^Example/d' /etc/freshclam.conf
+[root@localhost ClamAV]# gedit /etc/clamd.d/clamd.conf
+
+(gedit:6870): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6870): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6870): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+
+(gedit:6870): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6870): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6870): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+[root@localhost ClamAV]# gedit /etc/freshclam.conf
+
+(gedit:6990): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6990): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6990): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+
+(gedit:6990): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6990): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6990): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:6990): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+[root@localhost ClamAV]# gedit /usr/lib/systemd/system/clam-freshclam.service
+
+(gedit:7051): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7051): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7051): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+
+(gedit:7051): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7051): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7051): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7051): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+[root@localhost ClamAV]# systemctl enable clam-freshclam.service
+ln -s '/usr/lib/systemd/system/clam-freshclam.service' '/etc/systemd/system/multi-user.target.wants/clam-freshclam.service'
+[root@localhost ClamAV]# systemctl start clam-freshclam.service
+[root@localhost ClamAV]# systemctl status clam-freshclam.service
+clam-freshclam.service - freshclam scanner
+   Loaded: loaded (/usr/lib/systemd/system/clam-freshclam.service; enabled)
+   Active: active (running) since Tue 2016-04-26 20:48:28 IST; 31s ago
+  Process: 7097 ExecStart=/usr/bin/freshclam -d -c 4 (code=exited, status=0/SUCCESS)
+ Main PID: 7098 (freshclam)
+   CGroup: /system.slice/clam-freshclam.service
+           └─7098 /usr/bin/freshclam -d -c 4
+
+Apr 26 20:48:28 localhost.localdomain freshclam[7098]: freshclam daemon 0.99.1 (OS: linux-gnu, ARCH: x86_64, CPU: x86_64)
+Apr 26 20:48:28 localhost.localdomain freshclam[7098]: ClamAV update process started at Tue Apr 26 20:48:28 2016
+Apr 26 20:48:28 localhost.localdomain systemd[1]: Started freshclam scanner.
+Apr 26 20:48:29 localhost.localdomain freshclam[7098]: main.cvd is up to date (version: 57, sigs: 4218790, f-level: 60, builder: amishhammer)
+[root@localhost ClamAV]# ls -l /usr/lib/systemd/system/clam*
+-rw-r--r--. 1 root root 136 Mar 30 03:34 /usr/lib/systemd/system/clamd@scan.service
+-rw-r--r--. 1 root root 231 Mar 30 03:34 /usr/lib/systemd/system/clamd@.service
+-rw-r--r--. 1 root root 232 Apr 26 20:47 /usr/lib/systemd/system/clam-freshclam.service
+[root@localhost ClamAV]# systemctl enable /usr/lib/systemd/system/clamd@.service
+The unit files have no [Install] section. They are not meant to be enabled
+using systemctl.
+Possible reasons for having this kind of units are:
+1) A unit may be statically enabled by being symlinked from another unit's
+   .wants/ or .requires/ directory.
+2) A unit's purpose may be to act as a helper for some other unit which has
+   a requirement dependency on it.
+3) A unit may be started when needed via activation (socket, path, timer,
+   D-Bus, udev, scripted systemctl call, ...).
+[root@localhost ClamAV]# mv /usr/lib/systemd/system/clamd@.service /usr/lib/systemd/system/clamd.service
+[root@localhost ClamAV]# gedit /usr/lib/systemd/system/clamd@scan.service
+
+(gedit:7234): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7234): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7234): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+
+(gedit:7234): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7234): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7234): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7234): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+[root@localhost ClamAV]# gedit /usr/lib/systemd/system/clamd.service
+
+(gedit:7252): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7252): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7252): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+Error creating proxy: The connection is closed (g-io-error-quark, 18)
+
+(gedit:7252): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7252): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7252): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+(gedit:7252): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
+
+[root@localhost ClamAV]# cd /usr/lib/systemd/system
+[root@localhost system]# systemctl enable clamd.service
+ln -s '/usr/lib/systemd/system/clamd.service' '/etc/systemd/system/multi-user.target.wants/clamd.service'
+[root@localhost system]# systemctl enable clamd@scan.service
+ln -s '/usr/lib/systemd/system/clamd@scan.service' '/etc/systemd/system/multi-user.target.wants/clamd@scan.service'
+[root@localhost system]# systemctl start clamd.service
+[root@localhost system]# systemctl start clamd@scan.service
+[root@localhost system]# ps -e
+  PID TTY          TIME CMD
+    1 ?        00:00:04 systemd
+    2 ?        00:00:00 kthreadd
+    3 ?        00:00:00 ksoftirqd/0
+    5 ?        00:00:00 kworker/0:0H
+    7 ?        00:00:00 migration/0
+    8 ?        00:00:00 rcu_bh
+    9 ?        00:00:00 rcuob/0
+   10 ?        00:00:00 rcuob/1
+   11 ?        00:00:00 rcuob/2
+   12 ?        00:00:00 rcuob/3
+   13 ?        00:00:00 rcuob/4
+   14 ?        00:00:00 rcuob/5
+   15 ?        00:00:00 rcuob/6
+   16 ?        00:00:00 rcuob/7
+   17 ?        00:00:16 rcu_sched
+   18 ?        00:00:01 rcuos/0
+   19 ?        00:00:00 rcuos/1
+   20 ?        00:00:00 rcuos/2
+   21 ?        00:00:01 rcuos/3
+   22 ?        00:00:00 rcuos/4
+   23 ?        00:00:02 rcuos/5
+   24 ?        00:00:04 rcuos/6
+   25 ?        00:00:00 rcuos/7
+   26 ?        00:00:00 watchdog/0
+   27 ?        00:00:00 watchdog/1
+   28 ?        00:00:00 migration/1
+   29 ?        00:00:00 ksoftirqd/1
+   30 ?        00:00:00 kworker/1:0
+   31 ?        00:00:00 kworker/1:0H
+   32 ?        00:00:00 watchdog/2
+   33 ?        00:00:00 migration/2
+   34 ?        00:00:00 ksoftirqd/2
+   36 ?        00:00:00 kworker/2:0H
+   37 ?        00:00:00 watchdog/3
+   38 ?        00:00:00 migration/3
+   39 ?        00:00:00 ksoftirqd/3
+   41 ?        00:00:00 kworker/3:0H
+   42 ?        00:00:00 watchdog/4
+   43 ?        00:00:00 migration/4
+   44 ?        00:00:00 ksoftirqd/4
+   46 ?        00:00:00 kworker/4:0H
+   47 ?        00:00:00 watchdog/5
+   48 ?        00:00:00 migration/5
+   49 ?        00:00:00 ksoftirqd/5
+   51 ?        00:00:00 kworker/5:0H
+   52 ?        00:00:00 watchdog/6
+   53 ?        00:00:00 migration/6
+   54 ?        00:00:00 ksoftirqd/6
+   56 ?        00:00:00 kworker/6:0H
+   57 ?        00:00:00 watchdog/7
+   58 ?        00:00:00 migration/7
+   59 ?        00:00:00 ksoftirqd/7
+   61 ?        00:00:00 kworker/7:0H
+   62 ?        00:00:00 khelper
+   63 ?        00:00:00 kdevtmpfs
+   64 ?        00:00:00 netns
+   65 ?        00:00:00 writeback
+   66 ?        00:00:00 kintegrityd
+   67 ?        00:00:00 bioset
+   68 ?        00:00:00 kblockd
+   70 ?        00:00:00 khubd
+   71 ?        00:00:00 md
+   77 ?        00:00:01 kworker/5:1
+   81 ?        00:00:00 kswapd0
+   82 ?        00:00:00 ksmd
+   83 ?        00:00:00 khugepaged
+   84 ?        00:00:00 fsnotify_mark
+   85 ?        00:00:00 crypto
+   94 ?        00:00:00 kthrotld
+   97 ?        00:00:00 kmpath_rdacd
+   98 ?        00:00:00 kpsmoused
+  117 ?        00:00:00 deferwq
+  143 ?        00:00:00 kauditd
+  301 ?        00:00:01 kworker/1:2
+  313 ?        00:00:00 firewire
+  315 ?        00:00:00 ata_sff
+  321 ?        00:00:00 scsi_eh_0
+  322 ?        00:00:00 scsi_tmf_0
+  323 ?        00:00:00 scsi_eh_1
+  324 ?        00:00:00 scsi_tmf_1
+  325 ?        00:00:00 scsi_eh_2
+  326 ?        00:00:00 scsi_tmf_2
+  327 ?        00:00:00 scsi_eh_3
+  328 ?        00:00:00 scsi_tmf_3
+  329 ?        00:00:00 scsi_eh_4
+  330 ?        00:00:00 scsi_tmf_4
+  331 ?        00:00:00 scsi_eh_5
+  332 ?        00:00:00 scsi_tmf_5
+  358 ?        00:00:00 ttm_swap
+  368 ?        00:00:00 scsi_eh_6
+  369 ?        00:00:00 scsi_tmf_6
+  370 ?        00:00:00 usb-storage
+  373 ?        00:00:00 scsi_eh_7
+  374 ?        00:00:00 scsi_tmf_7
+  375 ?        00:00:00 usb-storage
+  393 ?        00:00:00 kworker/5:1H
+  394 ?        00:00:00 kworker/7:1H
+  395 ?        00:00:00 kworker/1:1H
+  416 ?        00:00:00 kworker/0:1H
+  458 ?        00:00:00 kdmflush
+  459 ?        00:00:00 bioset
+  472 ?        00:00:00 jbd2/sda6-8
+  473 ?        00:00:00 ext4-dio-unwrit
+  536 ?        00:00:00 kworker/6:1H
+  560 ?        00:00:00 systemd-journal
+  565 ?        00:00:00 kworker/4:1H
+  579 ?        00:00:00 lvmetad
+  590 ?        00:00:00 kworker/2:1H
+  606 ?        00:00:00 rpciod
+  609 ?        00:00:00 systemd-udevd
+  650 ?        00:00:00 kvm-irqfd-clean
+  651 ?        00:00:00 edac-poller
+  728 ?        00:00:00 cfg80211
+  733 ?        00:00:15 irq/47-iwlwifi
+  743 ?        00:00:01 rc0
+  751 ?        00:00:00 hd-audio1
+  755 ?        00:00:00 hd-audio0
+  764 ?        00:00:00 iwlwifi
+  786 ?        00:00:00 auditd
+  798 ?        00:00:00 audispd
+  800 ?        00:00:00 sedispatch
+  815 ?        00:00:00 alsactl
+  818 ?        00:00:00 firewalld
+  822 ?        00:00:00 lsmd
+  823 ?        00:00:00 rsyslogd
+  825 ?        00:00:00 avahi-daemon
+  827 ?        00:00:00 ModemManager
+  828 ?        00:00:00 smartd
+  831 ?        00:00:00 irqbalance
+  832 ?        00:00:00 avahi-daemon
+  835 ?        00:00:00 tuned
+  837 ?        00:00:00 abrtd
+  839 ?        00:00:00 abrt-watch-log
+  840 ?        00:00:00 abrt-watch-log
+  845 ?        00:00:00 chronyd
+  862 ?        00:00:00 systemd-logind
+  863 ?        00:00:00 accounts-daemon
+  865 ?        00:00:00 rtkit-daemon
+  867 ?        00:00:02 dbus-daemon
+  872 ?        00:00:00 crond
+  873 ?        00:00:00 atd
+  875 ?        00:00:00 gdm
+  878 ?        00:00:00 ksmtuned
+  911 ?        00:00:00 iprupdate
+  912 ?        00:00:00 iprinit
+  924 ?        00:00:00 iprdump
+  933 ?        00:00:00 kworker/3:1H
+  936 ?        00:00:00 gdm-simple-slav
+  938 ?        00:00:03 polkitd
+  995 tty1     00:02:35 Xorg
+ 1004 ?        00:00:02 NetworkManager
+ 1293 ?        00:00:00 wpa_supplicant
+ 1480 ?        00:00:00 libvirtd
+ 1483 ?        00:00:00 rpcbind
+ 1486 ?        00:00:00 sshd
+ 2482 ?        00:00:00 rpc.statd
+ 2554 ?        00:00:00 master
+ 2560 ?        00:00:00 qmgr
+ 2581 ?        00:00:00 dhclient
+ 2634 ?        00:00:00 upowerd
+ 2688 ?        00:00:00 colord
+ 2689 ?        00:00:09 pcscd
+ 2769 ?        00:00:00 gdm-session-wor
+ 2779 ?        00:00:00 gnome-keyring-d
+ 2781 ?        00:00:00 gnome-session
+ 2789 ?        00:00:00 dbus-launch
+ 2790 ?        00:00:00 dbus-daemon
+ 2855 ?        00:00:00 gvfsd
+ 2859 ?        00:00:00 gvfsd-fuse
+ 2935 ?        00:00:00 ssh-agent
+ 2963 ?        00:00:00 at-spi-bus-laun
+ 2967 ?        00:00:00 dbus-daemon
+ 2971 ?        00:00:00 at-spi2-registr
+ 2982 ?        00:00:05 gnome-settings-
+ 2997 ?        00:00:00 pulseaudio
+ 3019 ?        00:00:00 gvfs-udisks2-vo
+ 3022 ?        00:00:02 udisksd
+ 3036 ?        00:00:00 bluetoothd
+ 3044 ?        00:00:00 gvfs-afc-volume
+ 3049 ?        00:00:00 gvfs-gphoto2-vo
+ 3054 ?        00:00:00 gvfs-goa-volume
+ 3058 ?        00:00:00 goa-daemon
+ 3065 ?        00:00:00 gvfs-mtp-volume
+ 3068 ?        00:03:59 gnome-shell
+ 3079 ?        00:00:00 cupsd
+ 3085 ?        00:00:00 gsd-printer
+ 3087 ?        00:00:00 dconf-service
+ 3099 ?        00:00:00 ibus-daemon
+ 3102 ?        00:00:00 ibus-dconf
+ 3105 ?        00:00:00 ibus-x11
+ 3113 ?        00:00:00 gnome-shell-cal
+ 3119 ?        00:00:00 evolution-sourc
+ 3122 ?        00:00:00 mission-control
+ 3151 ?        00:00:28 nautilus
+ 3176 ?        00:00:00 gconfd-2
+ 3181 ?        00:00:00 abrt-applet
+ 3184 ?        00:00:00 seapplet
+ 3191 ?        00:00:00 tracker-store
+ 3194 ?        00:00:00 evolution-alarm
+ 3196 ?        00:00:00 tracker-miner-f
+ 3226 ?        00:00:00 gvfsd-trash
+ 3230 ?        00:00:00 ibus-engine-sim
+ 3250 ?        00:00:00 evolution-addre
+ 3265 ?        00:00:04 escd
+ 3273 ?        00:00:00 evolution-calen
+ 3383 ?        00:00:00 gvfsd-burn
+ 3388 ?        00:00:00 mount.ntfs
+ 3443 ?        00:00:00 mount.ntfs
+ 3520 ?        00:00:00 gvfsd-metadata
+ 3793 ?        00:00:00 kworker/4:3
+ 4101 ?        00:00:00 kworker/7:0
+ 4140 ?        00:00:00 mount.ntfs
+ 4788 ?        00:04:17 firefox
+ 4955 ?        00:00:00 kworker/7:1
+ 5238 ?        00:00:10 gnome-terminal-
+ 5241 ?        00:00:00 gnome-pty-helpe
+ 5242 pts/0    00:00:00 bash
+ 5281 pts/0    00:00:00 su
+ 5288 pts/0    00:00:00 bash
+ 5569 ?        00:00:01 kworker/0:2
+ 5941 ?        00:00:01 kworker/6:0
+ 6182 ?        00:00:01 kworker/u16:1
+ 6491 ?        00:00:00 kworker/3:0
+ 6808 ?        00:00:00 kworker/2:1
+ 6913 ?        00:00:00 kworker/5:0
+ 6965 ?        00:00:00 kworker/6:2
+ 7025 ?        00:00:00 kworker/0:1
+ 7060 ?        00:00:00 kworker/u16:2
+ 7098 ?        00:00:04 freshclam
+ 7131 ?        00:00:00 kworker/4:1
+ 7137 ?        00:00:00 kworker/3:2
+ 7179 ?        00:00:00 kworker/2:0
+ 7258 ?        00:00:00 kworker/6:1
+ 7401 ?        00:00:00 pickup
+ 7402 ?        00:00:00 kworker/u16:0
+ 7411 ?        00:00:00 kworker/2:2
+ 7419 ?        00:00:00 sleep
+ 7424 pts/0    00:00:00 ps
+[root@localhost system]# 
+

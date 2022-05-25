@@ -1,0 +1,2 @@
+Remove folder 'Test' and contents in current directory:
+rm -rf Test
